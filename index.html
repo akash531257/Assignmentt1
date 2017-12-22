@@ -1,41 +1,85 @@
 <!DOCTYPE html>
 <html>
+<title>Bollywood movies</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3mobile.css">
+<link rel="stylesheet" href="https://www.w3schools.com/lib/w3-theme-teal.css">
+<body>
 
-	<head>
-		<meta charset="utf-8"/>
-		<title>Learn AngularJS - Instant Search</title>
+<nav class="w3-sidebar w3-bar-block w3-card" id="mySidebar">
+<div class="w3-container w3-theme-d2">
+  <span onclick="closeSidebar()" class="w3-button w3-display-topright w3-large">X</span>
+  <br>
+  <div class="w3-padding w3-center">
+    <img class="w3-circle" src="1.jpg" alt="avatar" style="width:75%">
+  </div>
+</div>
+<a class="w3-bar-item w3-button" href="#">Movies</a>
+<a class="w3-bar-item w3-button" href="#">Friends</a>
+<a class="w3-bar-item w3-button" href="#">Messages</a>
+</nav>
 
-		<link href="http://fonts.googleapis.com/css?family=Cookie|Open+Sans:400,700" rel="stylesheet" />
+<header class="w3-top w3-bar w3-theme">
+  <button class="w3-bar-item w3-button w3-xxxlarge w3-hover-theme" onclick="openSidebar()">&#9776;</button>
+  <h1 class="w3-bar-item">Movies</h1>
+</header>
 
-		<!-- The main CSS file -->
-		<link href="style.css" rel="stylesheet" />
+<div class="w3-container" style="margin-top:90px">
+<hr>
+<div class="w3-cell-row">
+  <div class="w3-cell" style="width:30%">
+    <img class="w3-circle" src="1.jpg" style="width:100%">
+  </div>
+  <div class="w3-cell w3-container">
+    <h3>3 Idiots</h3>
+    <p>3 Idiots is a 2009 Indian coming-of-age comedy-drama film, directed and written by Rajkumar Hirani, and produced by Vidhu Vinod Chopra, with screenplay by Abhijat Joshi. It was inspired by the novel Five Point Someone by Chetan Bhagat.[4] The film stars Aamir Khan, R. Madhavan, Sharman Joshi, Kareena Kapoor, Boman Irani and Omi Vaidya in lead characters. </p>
+  </div>
+</div>  
+<hr>
+<div class="w3-cell-row">
+  <div class="w3-cell" style="width:30%">
+    <img class="w3-circle" src="4.jpg" style="width:100%">
+  </div>
+  <div class="w3-cell w3-container">
+    <h3>Dangal</h3>
+    <p>Dangal (English: Wrestling competition) is a 2016 Indian Hindi-language biographical sports drama film, produced by and starring Aamir Khan, and directed by Nitesh Tiwari, with production from the studios Aamir Khan Productions,</p>
+  </div>
+</div>
+<hr>
+<div class="w3-cell-row">
+  <div class="w3-cell" style="width:30%">
+    <img class="w3-circle" src="2.jpg" style="width:100%">
+  </div>
+  <div class="w3-cell w3-container">
+    <h3>Sultan</h3>
+    <p>Sultan is a 2016 Indian Hindi-language sports-drama film[4][5][6] directed by Ali Abbas Zafar. Produced by Aditya Chopra under the Yash Raj Films banner, the film stars Salman Khan as the title character opposite Anushka Sharma.</p>
+  </div>
+</div>
+<div class="w3-cell-row">
+  <div class="w3-cell" style="width:30%">
+    <img class="w3-circle" src="3.jpg" style="width:100%">
+  </div>
+  <div class="w3-cell w3-container">
+    <h3>PK</h3>
+    <p>PK (English: Tipsy) is a 2014 Indian satirical science fiction comedy film.[4][5][6] It was directed by Rajkumar Hirani, produced by Hirani and Vidhu Vinod Chopra, and written by Hirani and Abhijat Joshi.[7] The film stars Aamir Khan in the title role with Anushka Sharma, Sushant Singh Rajput, Boman Irani, Saurabh Shukla, and Sanjay Dutt in supporting ro</p>
+  </div>
+</div>
 
-		<!--[if lt IE 9]>
-			<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-		<![endif]-->
-	</head>
+<hr>
+</div>
 
-	<!-- Initialize a new AngularJS app and associate it with a module named "instantSearch"-->
-	<body ng-app="instantSearch" ng-controller="InstantSearchController">
+<footer class="w3-container w3-bottom w3-theme w3-margin-top">
+  <h3>Footer</h3>
+</footer>
 
-		<div class="bar">
-			<!-- Create a binding between the searchString model and the text field -->
-			<input type="text" ng-model="searchString" placeholder="Enter your search terms" />
-		</div>
+<script>
+closeSidebar();
+function openSidebar() {
+    document.getElementById("mySidebar").style.display = "block";
+}
+function closeSidebar() {
+    document.getElementById("mySidebar").style.display = "none";
+}
+</script>
 
-		<ul>
-			<!-- Render a li element for every entry in the items array. Notice
-				 the custom search filter "searchFor". It takes the value of the
-				 searchString model as an argument.
-			 -->
-			<li ng-repeat="i in items | searchFor:searchString">
-				<a href="{{i.url}}"><img ng-src="{{i.image}}" /></a>
-				<p>{{i.title}}</p>
-			</li>
-		</ul>
-
-		<!-- Include AngularJS from Google's CDN -->
-		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.7/angular.min.js"></script>
-		<script src="script.js"></script>
-	</body>
-</html>
+</body>
